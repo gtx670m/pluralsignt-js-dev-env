@@ -19,6 +19,8 @@ export default {
   },
   plugins: [
     // Hash the files using MD5 so that their names change when the content changes.
+    new WebpackMd5Hash(),
+
     // Use CommonChunkPlugin to create a separate bundle
     // of vendor libraries so that they're cached separately
     new webpack.optimize.CommonsChunkPlugin({
