@@ -5,11 +5,11 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
-  debug: true,
+  debug: false,
   devtool: 'source-map',
   noInfo: false,
   entry: {
-    vendor: path.resolve(__dirname, 'src/vendor'),
+    vendor: path.resolve(__dirname, 'src/vendor'), // contain 3rd party libs
     main: path.resolve(__dirname, 'src/index')
   },
   target: 'web',
@@ -46,7 +46,7 @@ export default {
         minifyCSS: true,
         minifyURLs: true
       },
-      inject: true,
+      inject: true, //inject any necessary script tags
       // Properties you define here are available in index.html
       // using htmlWebpackPlugin.options.varName
       trackJSToken: "c00b86c79f6c42d79a199d523adb227a"
